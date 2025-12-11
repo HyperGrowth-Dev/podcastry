@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcastry | On-demand Podcast Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-mint: #4FFFB0;
+            --brand-black: #111111;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--brand-black);
+            color: #f3f3f3;
+        }
+        h1, h2, h3, h4, h5, .font-heading {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+        .text-mint {
+            color: var(--brand-mint);
+        }
+        .bg-mint {
+            background-color: var(--brand-mint);
+        }
+        .border-mint {
+            border-color: var(--brand-mint);
+        }
+        .btn-shadow {
+            box-shadow: 4px 4px 0px #ffffff;
+            transition: all 0.2s;
+        }
+        .btn-shadow:hover {
+            box-shadow: 2px 2px 0px #ffffff;
+            transform: translate(2px, 2px);
+        }
+        .btn-shadow-mint {
+            box-shadow: 4px 4px 0px var(--brand-mint);
+            transition: all 0.2s;
+        }
+        .btn-shadow-mint:hover {
+            box-shadow: 2px 2px 0px var(--brand-mint);
+            transform: translate(2px, 2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="w-full py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800 bg-[#111]/90 backdrop-blur fixed top-0 z-50">
+        <!-- Logo Image Replaces Text -->
+        <a href="#" class="relative group block">
+             <!-- 
+                INSTRUCTIONS: 
+                1. Save your logo image as "Logo-low-res.png" in the same folder as this file.
+                2. Or change the src="" below to your image URL.
+             -->
+             <img src="Logo-low-res.png" alt="Podcastry" class="h-12 md:h-16 w-auto object-contain transform -rotate-2 group-hover:rotate-0 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/200x80/4FFFB0/000000?text=PODCASTRY&font=oswald'">
+        </a>
+
+        <div class="hidden md:flex gap-8 text-sm font-bold tracking-wide uppercase">
+            <a href="#" class="hover:text-[#4FFFB0] transition">Studio</a>
+            <a href="#" class="hover:text-[#4FFFB0] transition">Services</a>
+            <a href="#signup" class="hover:text-[#4FFFB0] transition">Join Waitlist</a>
+        </div>
+        <a href="#signup" class="bg-mint text-black px-6 py-3 font-black text-sm uppercase tracking-wider btn-shadow hidden sm:block">
+            Get Early Access
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 z-10">
+                <div class="inline-block bg-white text-black px-3 py-1 text-xs font-black tracking-widest uppercase transform -rotate-1">
+                    On-Demand Podcast Studio
+                </div>
+                <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter">
+                    PRESS <span class="text-mint">RECORD.</span><br>
+                    MAKE <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">NOISE.</span>
+                </h1>
+                <p class="text-gray-400 text-xl max-w-md font-medium">
+                    The premium studio where you just show up. We handle the engineering, lighting, and post-production.
+                </p>
+                <div class="pt-4">
+                    <p class="text-mint font-bold text-sm uppercase tracking-wider mb-3">Coming Soon — Get Early Access</p>
+                    <form id="hero-form" class="flex flex-col sm:flex-row gap-3 max-w-lg">
+                        <input type="email" name="email" required placeholder="Enter your email" class="flex-1 px-5 py-4 bg-white/10 border-2 border-white/30 text-white placeholder-gray-400 font-medium focus:outline-none focus:border-mint transition">
+                        <button type="submit" class="bg-mint text-black px-8 py-4 font-black text-lg uppercase tracking-wider btn-shadow whitespace-nowrap">
+                            Join Waitlist
+                        </button>
+                    </form>
+                    <p id="hero-message" class="mt-3 font-bold text-sm hidden"></p>
+                </div>
+            </div>
+            
+            <!-- Hero Image / Visual -->
+            <div class="relative z-10">
+                <!-- Decorative Mint Blob -->
+                <div class="absolute -top-10 -right-10 w-72 h-72 bg-mint blur-[80px] opacity-20 rounded-full"></div>
+                
+                <div class="relative border-4 border-white shadow-[8px_8px_0px_#4FFFB0] hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_#4FFFB0] transition duration-300 bg-gray-900 group">
+                    <div class="bg-gray-800 relative overflow-hidden">
+                        <img src="studioview.png" alt="Podcastry Studio" class="w-full h-auto block">
+                    </div>
+                    
+                    <!-- Sticker Style Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-mint text-black px-6 py-4 border-2 border-black transform rotate-3 shadow-[4px_4px_0px_#000]">
+                        <p class="font-black text-2xl leading-none">4K</p>
+                        <p class="text-xs font-bold uppercase">Multi-Cam Ready</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-24 px-6 md:px-12 bg-[#161616]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 border-l-8 border-mint pl-6">
+                <h2 class="text-5xl font-bold mb-2 uppercase">Everything You Need</h2>
+                <p class="text-gray-400 text-lg">Negative space. Positive vibes. Professional results.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="p-8 bg-[#111] border border-gray-800 hover:border-mint transition group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110">
+                        <i data-lucide="mic-2" class="w-24 h-24 text-mint"></i>
+                    </div>
+                    <i data-lucide="mic" class="w-10 h-10 text-mint mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3 font-heading uppercase">On-Demand Studio</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Acoustically treated. Shure SM7B mics. Engineer included. Just press record.
+                    </p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="p-8 bg-[#111] border border-gray-800 hover:border-mint transition group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110">
+                        <i data-lucide="video" class="w-24 h-24 text-mint"></i>
+                    </div>
+                    <i data-lucide="camera" class="w-10 h-10 text-mint mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3 font-heading uppercase">Multicam Video</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        4K recording with 3-angle switching. Cinema lighting presets included.
+                    </p>
+                </div>
+
+                 <!-- Service 3 -->
+                 <div class="p-8 bg-[#111] border border-gray-800 hover:border-mint transition group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110">
+                        <i data-lucide="sliders" class="w-24 h-24 text-mint"></i>
+                    </div>
+                    <i data-lucide="wand-2" class="w-10 h-10 text-mint mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3 font-heading uppercase">Full Editing</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        We mix, master, color grade, and remove the "umms". 48-hour turnaround.
+                    </p>
+                </div>
+
+                <!-- Service 4 -->
+                 <div class="p-8 bg-[#111] border border-gray-800 hover:border-mint transition group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition transform group-hover:scale-110">
+                        <i data-lucide="smartphone" class="w-24 h-24 text-mint"></i>
+                    </div>
+                    <i data-lucide="share-2" class="w-10 h-10 text-mint mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-3 font-heading uppercase">Social Clips</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Get 10 viral-ready vertical clips (9:16) for TikTok & Reels with every episode.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Podcastry (Brand Voice) -->
+    <section class="py-24 px-6 md:px-12 bg-gray-900 border-y border-gray-800">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+             <div class="relative order-2 lg:order-1">
+                <!-- Brand Character Graphic -->
+                <div class="relative z-10 border-4 border-white bg-[#111] -rotate-2 hover:rotate-0 transition duration-500 shadow-[8px_8px_0px_#4FFFB0]">
+                    <img src="guylogo.png" alt="Podcastry Characters" class="w-full h-auto block">
+                </div>
+                <!-- Tagline Sticker -->
+                <div class="absolute -top-6 -right-6 bg-white text-black font-black p-4 text-xl uppercase rotate-6 shadow-lg border-2 border-black">
+                    No Friction.
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+                <h2 class="text-5xl font-bold mb-6 leading-tight uppercase">
+                    You Focus on the Conversation. <br>
+                    We Handle the <span class="text-mint decoration-4 underline decoration-white underline-offset-4">Noise.</span>
+                </h2>
+                <p class="text-gray-300 text-lg mb-8 font-medium">
+                    Creators choose Podcastry because we remove the technical friction. No setting up lights, no syncing audio files, no editing nightmares.
+                </p>
+
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-4 text-lg font-bold uppercase">
+                        <span class="bg-mint text-black p-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        Professional Audio Engineers
+                    </li>
+                    <li class="flex items-center gap-4 text-lg font-bold uppercase">
+                        <span class="bg-mint text-black p-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        Cinema-Grade Lighting Design
+                    </li>
+                    <li class="flex items-center gap-4 text-lg font-bold uppercase">
+                        <span class="bg-mint text-black p-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        48-hour Turnaround on Edits
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Mint Booking CTA -->
+    <section class="py-24 px-6 md:px-12 bg-mint text-black relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(circle, #000 2px, transparent 2.5px); background-size: 20px 20px;"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase leading-[0.85]">
+                Ready to<br>Make Noise?
+            </h2>
+            <p class="text-xl md:text-2xl mb-10 font-bold opacity-80 max-w-2xl mx-auto normal-case">
+                Be the first to know when we launch. Join the waitlist for exclusive early access.
+            </p>
+            <form id="signup" class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
+                <input type="email" name="email" required placeholder="Enter your email" class="flex-1 px-6 py-5 bg-black/20 border-4 border-black text-black placeholder-black/60 font-bold focus:outline-none focus:bg-black/30 transition">
+                <button type="submit" class="bg-black text-white px-10 py-5 font-black text-xl uppercase tracking-wider btn-shadow-mint border-2 border-transparent hover:bg-gray-900 whitespace-nowrap">
+                    Join Waitlist
+                </button>
+            </form>
+            <p id="signup-message" class="mt-4 font-bold text-lg hidden"></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 px-6 md:px-12 border-t border-gray-900">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                 <a href="#" class="block mb-6 transform -rotate-2">
+                     <img src="Logo-low-res.png" alt="Podcastry" class="h-12 w-auto object-contain" onerror="this.onerror=null; this.src='https://placehold.co/200x80/4FFFB0/000000?text=PODCASTRY&font=oswald'">
+                 </a>
+                <p class="text-gray-500 text-sm max-w-xs">
+                    The on-demand podcast studio for creators who mean business. <br>Press Record. Make Noise.
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap gap-12">
+                <div>
+                    <h4 class="font-bold uppercase tracking-wider mb-6 text-mint text-sm">Studio</h4>
+                    <ul class="space-y-3 text-sm font-bold text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#signup" class="hover:text-white transition">Join Waitlist</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold uppercase tracking-wider mb-6 text-mint text-sm">Connect</h4>
+                    <ul class="space-y-3 text-sm font-bold text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Instagram</a></li>
+                        <li><a href="#" class="hover:text-white transition">YouTube</a></li>
+                        <li><a href="#" class="hover:text-white transition">TikTok</a></li>
+                        <li><a href="#" class="hover:text-white transition">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-900 text-center text-gray-600 text-xs uppercase font-bold tracking-widest">
+            &copy; 2025 Podcastry Studios. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Waitlist form handler
+        const ZAPIER_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/19904371/uff03z6/';
+
+        async function handleWaitlistSubmit(form, messageEl) {
+            const email = form.querySelector('input[name="email"]').value;
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            
+            // Show loading state
+            button.textContent = 'Sending...';
+            button.disabled = true;
+
+            try {
+                await fetch(ZAPIER_WEBHOOK, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+
+                // Success
+                messageEl.textContent = "You're on the list! We'll be in touch soon.";
+                messageEl.classList.remove('hidden', 'text-red-400');
+                messageEl.classList.add('text-mint');
+                form.reset();
+            } catch (error) {
+                // Error
+                messageEl.textContent = 'Something went wrong. Please try again.';
+                messageEl.classList.remove('hidden', 'text-mint');
+                messageEl.classList.add('text-red-400');
+            }
+
+            button.textContent = originalText;
+            button.disabled = false;
+        }
+
+        // Hero form
+        document.getElementById('hero-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleWaitlistSubmit(this, document.getElementById('hero-message'));
+        });
+
+        // CTA form
+        document.getElementById('signup').addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleWaitlistSubmit(this, document.getElementById('signup-message'));
+        });
+    </script>
+</body>
+</html>

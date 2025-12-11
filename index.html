@@ -51,44 +51,58 @@
 <body class="antialiased">
 
     <!-- Navigation -->
-    <nav class="w-full py-4 px-6 md:px-12 flex justify-between items-center border-b border-gray-800 bg-[#111]/90 backdrop-blur fixed top-0 z-50">
-        <!-- Logo Image Replaces Text -->
+    <nav class="w-full py-4 px-6 md:px-12 flex justify-center items-center border-b border-gray-800 bg-[#111]/90 backdrop-blur fixed top-0 z-50">
+        <!-- Centered Logo -->
         <a href="#" class="relative group block">
-             <!-- 
-                INSTRUCTIONS: 
-                1. Save your logo image as "Logo-low-res.png" in the same folder as this file.
-                2. Or change the src="" below to your image URL.
-             -->
              <img src="Logo-low-res.png" alt="Podcastry" class="h-12 md:h-16 w-auto object-contain transform -rotate-2 group-hover:rotate-0 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/200x80/4FFFB0/000000?text=PODCASTRY&font=oswald'">
-        </a>
-
-        <div class="hidden md:flex gap-8 text-sm font-bold tracking-wide uppercase">
-            <a href="#" class="hover:text-[#4FFFB0] transition">Studio</a>
-            <a href="#" class="hover:text-[#4FFFB0] transition">Services</a>
-            <a href="#signup" class="hover:text-[#4FFFB0] transition">Join Waitlist</a>
-        </div>
-        <a href="#signup" class="bg-mint text-black px-6 py-3 font-black text-sm uppercase tracking-wider btn-shadow hidden sm:block">
-            Get Early Access
         </a>
     </nav>
 
     <!-- Hero Section -->
     <header class="relative pt-32 pb-20 px-6 md:px-12 lg:px-20 overflow-hidden">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 z-10">
+            <div class="space-y-6 z-10 text-center lg:text-left">
                 <div class="inline-block bg-white text-black px-3 py-1 text-xs font-black tracking-widest uppercase transform -rotate-1">
                     On-Demand Podcast Studio
                 </div>
-                <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter">
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold leading-[0.9] tracking-tighter">
                     PRESS <span class="text-mint">RECORD.</span><br>
                     MAKE <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">NOISE.</span>
                 </h1>
-                <p class="text-gray-400 text-xl max-w-md font-medium">
+                <p class="text-gray-400 text-lg md:text-xl max-w-md font-medium mx-auto lg:mx-0">
                     The premium studio where you just show up. We handle the engineering, lighting, and post-production.
                 </p>
-                <div class="pt-4">
-                    <p class="text-mint font-bold text-sm uppercase tracking-wider mb-3">Coming Soon — Get Early Access</p>
-                    <form id="hero-form" class="flex flex-col sm:flex-row gap-3 max-w-lg">
+                <!-- Founders Club Offer -->
+                <div class="bg-white text-black p-6 max-w-md mx-auto lg:mx-0 border-4 border-black shadow-[6px_6px_0px_#4FFFB0] transform rotate-1 hover:rotate-0 transition duration-300 mt-2">
+                    <h3 class="text-2xl font-black uppercase tracking-tight mb-4 leading-tight">
+                        Founders Club
+                    </h3>
+                    <ul class="text-left space-y-2 mb-4 text-sm">
+                        <li class="flex items-center gap-2 font-bold">
+                            <span class="bg-mint text-black p-0.5"><i data-lucide="check" class="w-3 h-3"></i></span>
+                            Done For You Podcast Session
+                        </li>
+                        <li class="flex items-center gap-2 font-bold">
+                            <span class="bg-mint text-black p-0.5"><i data-lucide="check" class="w-3 h-3"></i></span>
+                            50 Minute Session
+                        </li>
+                        <li class="flex items-center gap-2 font-bold">
+                            <span class="bg-mint text-black p-0.5"><i data-lucide="check" class="w-3 h-3"></i></span>
+                            3 Viral Edited Clips For Socials
+                        </li>
+                        <li class="flex items-center gap-2 font-bold">
+                            <span class="bg-mint text-black p-0.5"><i data-lucide="check" class="w-3 h-3"></i></span>
+                            Bring a Buddy for Free!
+                        </li>
+                    </ul>
+                    <p class="text-red-600 font-black text-sm uppercase tracking-wide">
+                        Only limited Slots Available
+                    </p>
+                </div>
+
+                <div class="pt-6">
+                    <p class="text-mint font-bold text-sm uppercase tracking-wider mb-3">Sign Up to Lock In Your Spot</p>
+                    <form id="hero-form" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto lg:mx-0">
                         <input type="email" name="email" required placeholder="Enter your email" class="flex-1 px-5 py-4 bg-white/10 border-2 border-white/30 text-white placeholder-gray-400 font-medium focus:outline-none focus:border-mint transition">
                         <button type="submit" class="bg-mint text-black px-8 py-4 font-black text-lg uppercase tracking-wider btn-shadow whitespace-nowrap">
                             Join Waitlist
@@ -228,8 +242,37 @@
             <h2 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter uppercase leading-[0.85]">
                 Ready to<br>Make Noise?
             </h2>
-            <p class="text-xl md:text-2xl mb-10 font-bold opacity-80 max-w-2xl mx-auto normal-case">
-                Be the first to know when we launch. Join the waitlist for exclusive early access.
+            
+            <!-- Founders Club Offer -->
+            <div class="bg-white text-black p-8 md:p-10 max-w-lg mx-auto mb-10 border-4 border-black shadow-[8px_8px_0px_#000] transform -rotate-1 hover:rotate-0 transition duration-300">
+                <h3 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-6 leading-tight">
+                    Founders Club Launch Offer — <span class="text-mint">$299</span>
+                </h3>
+                <ul class="text-left space-y-3 mb-6">
+                    <li class="flex items-start gap-3 text-lg font-bold">
+                        <span class="bg-mint text-black p-1 mt-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        Done For You Podcast Session
+                    </li>
+                    <li class="flex items-start gap-3 text-lg font-bold">
+                        <span class="bg-mint text-black p-1 mt-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        50 Minute Session
+                    </li>
+                    <li class="flex items-start gap-3 text-lg font-bold">
+                        <span class="bg-mint text-black p-1 mt-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        3 Viral Edited Clips For Socials
+                    </li>
+                    <li class="flex items-start gap-3 text-lg font-bold">
+                        <span class="bg-mint text-black p-1 mt-1"><i data-lucide="check" class="w-4 h-4"></i></span>
+                        Bring a Buddy for Free!
+                    </li>
+                </ul>
+                <p class="text-red-600 font-black text-xl uppercase tracking-wide">
+                    Only 20 Slots Available — Sign Up Now
+                </p>
+            </div>
+
+            <p class="text-xl md:text-2xl mb-6 font-bold opacity-80 max-w-2xl mx-auto normal-case">
+                Join the waitlist to lock in your Founders Club spot.
             </p>
             <form id="signup" class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
                 <input type="email" name="email" required placeholder="Enter your email" class="flex-1 px-6 py-5 bg-black/20 border-4 border-black text-black placeholder-black/60 font-bold focus:outline-none focus:bg-black/30 transition">
